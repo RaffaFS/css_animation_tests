@@ -1,0 +1,44 @@
+//
+
+@use 'modules/reset';
+@use 'modules/colors';
+@use 'modules/font';
+
+body{
+    background-color: colors.$blue2;
+
+    .container{
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
+
+        .buttons{
+            margin-top: 64px;
+            height: 520px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: space-around;
+
+            .btn-box{
+                background-color: colors.$blue1-6;
+                padding: 4px 8px;
+                border: solid 4px colors.$blue1;
+                border-radius: 16px;
+                box-shadow: 0px 2px 2px colors.$b2;
+                transition: all .5s;
+
+                &:hover{
+                    translate: 0px -10px;
+                    box-shadow: 0px 12px 12px colors.$b2;
+                }
+
+                .btn{
+                    text-decoration: none;
+                    font-family: font.$family3;
+                    font-size: font.$size2;
+                }
+            }
+        }
+    }
+}

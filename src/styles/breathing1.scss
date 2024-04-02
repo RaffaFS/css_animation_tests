@@ -1,0 +1,53 @@
+@use 'modules/reset';
+@use 'modules/reset-screen';
+@use 'modules/colors';
+@use 'modules/font';
+
+@keyframes dive{
+    0%{filter: brightness(200%);}
+    70%{transform: translateZ(-160px);filter: brightness(100%);}
+    100%{filter: brightness(200%);}
+}
+
+.animation-screen{display: block;}
+.element-layers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    transition: all 1s;
+
+    &:hover{rotate: 1 1 0 80deg;}
+
+    .layer{
+        background-color: colors.$blue1;
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        position: absolute;
+    
+        animation: dive 8s infinite ease-in-out;
+    }
+
+    .layer1{transform: translateZ(160px); background-color: colors.$blue1-2;}
+    .layer2{transform: translateZ(80px);background-color: colors.$blue1-4;}
+    .layer3{background-color: colors.$blue1-6;}
+    .layer4{transform: translateZ(-80px);background-color: colors.$blue1-8;}
+    .layer5{transform: translateZ(-160px);background-color: colors.$blue1;}
+}
+
+.rotate-btn{
+    background-color: colors.$blue1-6;
+    border: 4px solid colors.$blue1;
+    border-radius: 16px;
+    padding: 4px 8px;
+    text-align: center;
+    margin: 0 auto;
+
+    .text{
+        font-family: font.$family3;
+        text-decoration: none;
+    }
+}

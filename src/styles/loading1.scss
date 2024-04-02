@@ -1,0 +1,27 @@
+@use 'modules/reset';
+@use 'modules/reset-screen';
+@use 'modules/colors';
+@use 'modules/font';
+
+@keyframes loading{
+    100%{rotate: 0 0 1 360deg;}
+}
+
+.element{
+    background-color: transparent;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 8px solid colors.$blue1;
+    border-right: 8px solid transparent;
+    transition: all 1s;
+
+    animation: loading 1s infinite linear;
+
+    &:hover{
+        scale: 2;
+        border-radius: 25%;
+        border-right: none;
+        border-left: none;
+    }
+}

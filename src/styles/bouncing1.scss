@@ -1,0 +1,22 @@
+@use 'modules/reset';
+@use 'modules/reset-screen';
+@use 'modules/colors';
+@use 'modules/font';
+
+@keyframes normalBouncing{
+    0%{height: 95px; width: 105px;}
+    10%{height: 100px; width: 100px;}
+    30%{height: 110px; width: 90px;}
+    50%{height: 60px; width: 140px; translate: 0 200px;}
+    70%{height: 120px; width: 80px;}
+    100%{height: 95px; width: 105px;}
+}
+
+.element{
+    background-color: colors.$blue1;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+
+    animation: normalBouncing 1s infinite ease-in-out;
+}

@@ -1,0 +1,31 @@
+@use 'modules/reset';
+@use 'modules/reset-screen';
+@use 'modules/colors';
+@use 'modules/font';
+
+@keyframes floating{
+    50%{
+        translate: 0 -16px;
+        box-shadow: 0 16px 8px rgb(0,0,0,.1);
+    }
+}
+@keyframes floating3d{
+    50%{
+        translate: 0 -16px;
+        box-shadow: 0 64px 16px -20px rgb(0,0,0,.2);
+    }
+}
+
+.element{
+    background-color: colors.$blue1;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    box-shadow: 0 1px 1px rgb(0,0,0,.8);
+}
+
+.element1{animation: floating 6s infinite ease-in-out;}
+.element2{
+    box-shadow: 0 48px 16px -24px rgb(0,0,0,.4);
+    animation: floating3d 6s infinite ease-in-out;
+}

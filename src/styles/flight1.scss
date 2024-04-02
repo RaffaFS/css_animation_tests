@@ -1,0 +1,22 @@
+@use 'modules/reset';
+@use 'modules/reset-screen';
+@use 'modules/colors';
+@use 'modules/font';
+
+@keyframes startingFlight{
+    15%{translate: 0 -30px;}
+    25%{translate: 0 -24px;}
+    40%{translate: 0 -54px;}
+    50%{translate: 0 -48px;}
+    65%{translate: 0 -108px;}
+    100%{translate: 0 0;}
+}
+
+.element{
+    background-color: colors.$blue1;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+
+    animation: startingFlight 4s infinite ease-in-out;
+}

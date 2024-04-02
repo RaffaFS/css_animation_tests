@@ -1,0 +1,40 @@
+@use 'modules/reset';
+@use 'modules/reset-screen';
+@use 'modules/colors';
+@use 'modules/font';
+
+@keyframes rotate3d{
+    25%{rotate: 1 1 0 -90deg;}
+    50%{rotate: 1 1 0 -180deg;}
+    75%{rotate: 1 1 0 -270deg;}
+    100%{rotate: 1 1 0 -360deg;}
+}
+
+.cubo-faces{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform-style: preserve-3d;
+
+    animation: rotate3d 10s infinite linear;
+
+    .face{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        width: 200px;
+        border: solid 4px #222;
+        border-radius: 16px;
+        background-color: colors.$blue1-6;
+        position: absolute;
+    }
+
+    .frente{background-color: colors.$blue1; transform: translateZ(100px);}
+    .verso{background-color: colors.$blue1; transform: translateZ(-100px) rotateY(180deg);}
+    .esquerda{background-color: colors.$blue1-8; transform: translateX(-100px) rotatey(-90deg);}
+    .direita{background-color: colors.$blue1-8; transform: translateX(100px) rotateY(90deg);}
+    .cima{background-color: colors.$blue1-8; transform: translateY(-100px) rotateX(90deg);}
+    .baixo{background-color: colors.$blue1-8; transform: translateY(100px) rotateX(-90deg);}
+}
