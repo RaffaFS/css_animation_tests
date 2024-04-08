@@ -1,0 +1,173 @@
+@use 'modules/reset';
+@use 'modules/reset-screen';
+@use 'modules/colors';
+@use 'modules/font';
+
+@keyframes spin{
+    100%{rotate: 0 0 1 360deg;}
+}
+@keyframes colors{
+    100%{filter: hue-rotate(360deg) saturate(1000%);}
+}
+@keyframes spin_colors{
+    100%{rotate: 0 0 1 360deg;}
+    100%{filter: hue-rotate(360deg) saturate(1000%);}
+}
+
+body{
+    .container{
+        .animation-screen{
+            background-color: #111;
+
+            .element-box{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                height: 300px;
+                width: 200px;
+                border-radius: 16px;
+
+                .element{
+                    font-size: font.$size1;
+                }
+            }
+
+            //////////////////////////////////////___CARD_1___
+
+            .element-box1{
+                position: relative;
+                isolation: isolate;
+                overflow: hidden;
+
+                &::before{
+                    background-color: rgb(0 0 255);
+                    position: absolute;
+                    inset: 0;
+                    content: '';
+
+                    animation: colors 6s infinite linear;
+                }
+                &::after{
+                    background-color: #222;
+                    position: absolute;
+                    inset: 4px;
+                    content: '';
+                    border-radius: 16px;
+                }
+
+                .element{z-index: 1;}
+            }
+
+            //////////////////////////////////////___CARD_2___
+
+            .element-box2{
+                position: relative;
+                isolation: isolate;
+                overflow: hidden;
+
+                &::before{
+                    background-image: linear-gradient(0deg, rgb(0 0 255), rgb(0 255 255));
+                    position: absolute;
+                    content: '';
+                    height: 118%;
+                    width: 50%;
+
+                    animation: spin 6s infinite linear;
+                }
+                &::after{
+                    background-color: #222;
+                    position: absolute;
+                    content: '';
+                    inset: 4px;
+                    border-radius: 16px;
+                }
+
+                .element{z-index: 1;}
+            }
+
+            //////////////////////////////////////___CARD_3___
+            
+            .element-box3{
+                position: relative;
+                isolation: isolate;
+                overflow: hidden;
+
+                &::before{
+                    background-color: rgb(0 255 255);
+                    position: absolute;
+                    content: '';
+                    height: 118%;
+                    width: 50%;
+
+                    animation: spin_colors 6s infinite linear;
+                }
+                &::after{
+                    background-color: #222;
+                    position: absolute;
+                    content: '';
+                    inset: 4px;
+                    border-radius: 16px;
+                }
+
+                .element{z-index: 1;}
+            }
+
+            //////////////////////////////////////___CARD_4___
+
+            .element-box4{
+                position: relative;
+                isolation: isolate;
+                overflow: hidden;
+
+                &::before{
+                    background-image: conic-gradient(transparent 320deg, rgb(0 255 255) 350deg);
+                    position: absolute;
+                    content: '';
+                    height: 118%;
+                    width: 100%;
+
+                    animation: spin 6s infinite linear;
+                }
+                &::after{
+                    background-color: #222;
+                    position: absolute;
+                    content: '';
+                    inset: 4px;
+                    border-radius: 16px;
+                }
+
+                .element{z-index: 1;}
+            }
+
+            //////////////////////////////////////___CARD_5___
+
+            .element-box5{
+                position: relative;
+                isolation: isolate;
+                overflow: hidden;
+
+                &::before{
+                    background-image: conic-gradient(
+                        transparent 135deg, rgb(0 0 255) 175deg, transparent 176deg, 
+                        transparent 320deg, rgb(0 255 255) 350deg);
+                    position: absolute;
+                    content: '';
+                    height: 118%;
+                    width: 100%;
+
+                    animation: spin 6s infinite linear;
+                }
+                &::after{
+                    background-color: #222;
+                    position: absolute;
+                    content: '';
+                    inset: 4px;
+                    border-radius: 16px;
+                }
+
+                .element{z-index: 1;}
+            }
+        }
+    }
+}

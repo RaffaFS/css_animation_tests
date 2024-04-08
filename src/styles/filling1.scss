@@ -1,0 +1,79 @@
+@use 'modules/reset';
+@use 'modules/reset-screen';
+@use 'modules/colors';
+@use 'modules/font';
+
+@keyframes filling{
+    0%{width: 0;}
+    100%{width: 100%;}
+}
+
+body{
+    .container{
+        .animation-screen{
+            background-color: #111;
+            flex-wrap: wrap;
+
+            .element-box1{
+                .element{
+                    font-family: font.$family1;
+                    font-size: font.$size1;
+                    color: #333;
+                    border-bottom: 8px solid #333;
+                    border-radius: 4px;
+                    letter-spacing: 8px;
+                    position: relative;
+
+                    &::before{
+                        content: attr(fillingElement);          // O valor "attr()" serve para referenciar um conteúdo html
+                                                                // definido previamente e exibi-lo de maneira dinâmica com o CSS
+                        position: absolute;
+                        color: aliceblue;
+                        overflow: hidden;
+                        border-bottom: 8px solid aliceblue;
+                        animation: filling 4s infinite ease-in-out;
+                    }
+                }
+            }
+
+            // Aqui é só um exemplo de outras possibilidades com essa ideia
+            .element-box2{
+                .element{
+                    width: 720px;
+                    height: 64px;
+                    position: relative;
+
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        inset: 0;
+                        border: solid 4px aliceblue;
+                        background-image: url(../img/wallpapeCowboy.jpg);
+                        background-position: top;
+                        background-size: cover;
+
+                        animation: filling 4s infinite ease-in-out;
+                    }
+                }
+            }
+
+            .element-box3{
+                .element{
+                    border: aliceblue solid 4px;
+                    width: 720px;
+                    height: 64px;
+                    position: relative;
+                    
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        inset: 0;
+                        background-color: aliceblue;
+
+                        animation: filling 4s infinite ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+}

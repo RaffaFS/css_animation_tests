@@ -1,0 +1,16 @@
+@use 'modules/reset';
+@use 'modules/reset-screen';
+@use 'modules/colors';
+@use 'modules/font';
+
+body{
+    .container{
+        .animation-screen{
+            .scroll{
+                .line{
+                    
+                }
+            }
+        }
+    }
+}

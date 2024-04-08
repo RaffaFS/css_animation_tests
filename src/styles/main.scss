@@ -37,7 +37,21 @@ body{
                     text-decoration: none;
                     font-family: font.$family3;
                     font-size: font.$size2;
+                    margin: 0 8px;
                 }
+            }
+        }
+
+        .text-box{
+            margin-top: 64px;
+            display: flex;
+            justify-content: center;
+
+            .text{
+                padding: 8px 16px;
+                border-radius: 8px;
+                background-color: colors.$blue1-6;
+                font-size: font.$size3;
             }
         }
     }

@@ -7,21 +7,63 @@
     100%{rotate: 0 0 1 360deg;}
 }
 
-.element{
+@mixin blueCircle{
     background-color: transparent;
     height: 100px;
     width: 100px;
     border-radius: 50%;
     border: 8px solid colors.$blue1;
     border-right: 8px solid transparent;
-    transition: all 1s;
-
     animation: loading 1s infinite linear;
+}
 
-    &:hover{
-        scale: 2;
-        border-radius: 25%;
-        border-right: none;
-        border-left: none;
+@mixin layersElements{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.element1{@include blueCircle;}
+
+.element2{
+    @include blueCircle;
+    border-left: 8px solid transparent;
+}
+
+.element3{
+    @include blueCircle;
+    border: solid 8px colors.$blue1-4;
+    border-right: solid 8px colors.$blue1
+}
+
+.element4{
+    @include layersElements;
+
+    .layer{
+        @include blueCircle;
+        position: absolute;
+    }
+    .layer1{
+        border: solid 8px colors.$blue1-4;
+    }
+    .layer2{
+        border-bottom: none;
+    }
+}
+
+.element5{
+    @include layersElements;
+
+    .layer{
+        position: absolute;
+    }
+    .layer2{@include blueCircle;     animation-timing-function: ease;}
+    .layer1{
+        animation: loading 1s infinite reverse;    
+        border: 12px solid colors.$blue1-4;
+        border-radius: 2px;
     }
 }
